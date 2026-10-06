@@ -1,111 +1,417 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio and professional resume of Shimul Kumar Sarkar — Business Development, Management, Digital Marketing and ICT.">
+  <meta name="description" content="Shimul Kumar Sarkar — Professional Portfolio, Education, Experience, Skills and Career Profile">
+  <meta name="author" content="Shimul Kumar Sarkar">
   <title>Shimul Kumar Sarkar | Professional Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Hind Siliguri','Inter','sans-serif']
+          },
+          boxShadow: {
+            soft: '0 20px 60px rgba(15,23,42,.10)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-padding-top: 82px; }
+    body { font-family:'Hind Siliguri','Inter',sans-serif; }
+    .hero-bg { background:
+      radial-gradient(circle at 10% 20%, rgba(56,189,248,.20), transparent 30%),
+      radial-gradient(circle at 85% 15%, rgba(59,130,246,.18), transparent 28%),
+      linear-gradient(135deg,#020617 0%,#0f172a 50%,#075985 100%); }
+    .glass { background:rgba(255,255,255,.08); backdrop-filter:blur(16px); border:1px solid rgba(255,255,255,.12); }
+    .section-title::after { content:""; display:block; width:58px; height:4px; border-radius:99px; margin-top:10px; background:linear-gradient(90deg,#0284c7,#38bdf8); }
+    .skill-bar { height:8px; border-radius:999px; background:#e2e8f0; overflow:hidden; }
+    .dark .skill-bar { background:#1e293b; }
+    .skill-fill { height:100%; border-radius:999px; background:linear-gradient(90deg,#0284c7,#38bdf8); } .tag{padding:.5rem 1rem;border-radius:999px;background:#f1f5f9;font-weight:700} .dark .tag{background:#1e293b}
+    @media print {
+      header, .no-print { display:none !important; }
+      body { background:white !important; color:#111827 !important; }
+      section { break-inside:avoid; }
+      .print-dark { color:#111827 !important; background:white !important; }
+    }
+  </style>
 </head>
-<body>
-<header class="nav">
-  <a class="brand" href="#home">Shimul<span>.</span></a>
-  <nav>
-    <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a>
-    <a href="#skills">Skills</a><a href="#contact">Contact</a>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+<header class="fixed top-0 inset-x-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="#home" class="font-extrabold text-lg text-sky-600 dark:text-sky-400">
+      Shimul K. Sarkar
+    </a>
+    <nav class="hidden lg:flex items-center gap-5 text-sm font-semibold">
+      <a href="#about" class="hover:text-sky-600">About</a>
+      <a href="#experience" class="hover:text-sky-600">Experience</a>
+      <a href="#education" class="hover:text-sky-600">Education</a>
+      <a href="#skills" class="hover:text-sky-600">Skills</a>
+      <a href="#personal" class="hover:text-sky-600">Personal</a>
+      <a href="#references" class="hover:text-sky-600">References</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button id="langBtn" class="px-3 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-bold" aria-label="Change language">EN</button>
+      <button id="themeBtn" class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon dark:hidden"></i><i class="fa-solid fa-sun hidden dark:inline"></i>
+      </button>
+      <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-800" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <nav id="mobileMenu" class="hidden lg:hidden px-4 pb-4 bg-white dark:bg-slate-950">
+    <div class="grid gap-2 text-sm font-semibold">
+      <a href="#about" class="mobile-link py-2">আমার সম্পর্কে</a>
+      <a href="#experience" class="mobile-link py-2">অভিজ্ঞতা</a>
+      <a href="#education" class="mobile-link py-2">শিক্ষা ও কোর্স</a>
+      <a href="#skills" class="mobile-link py-2">দক্ষতা</a>
+      <a href="#personal" class="mobile-link py-2">ব্যক্তিগত তথ্য</a>
+      <a href="#references" class="mobile-link py-2">রেফারেন্স</a>
+    </div>
   </nav>
-  <a class="btn small" href="#contact">Let's Connect</a>
 </header>
 
-<main>
-<section id="home" class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">BUSINESS DEVELOPMENT • MANAGEMENT • DIGITAL MARKETING</p>
-    <h1>Shimul Kumar<br><span>Sarkar</span></h1>
-    <p class="lead">Business Development professional with an MBA, BBA in Management and ICT training, focused on client relationships, business growth, communication and practical problem-solving.</p>
-    <div class="actions">
-      <a class="btn" href="#experience">View My Experience</a>
-      <a class="btn ghost" href="#contact">Contact Me</a>
+<main id="home">
+  <!-- HERO -->
+  <section class="hero-bg text-white pt-28 pb-20 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-[1.2fr_.8fr] gap-10 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sky-200 text-sm mb-5">
+          <i class="fa-solid fa-circle-check text-emerald-300"></i>
+          Professional Career Profile
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Shimul Kumar Sarkar</h1>
+        <p class="mt-4 text-xl text-sky-200 font-semibold">MBA • Business Development • Management • ICT</p>
+        <p class="mt-5 max-w-2xl text-slate-200 leading-8">
+          A motivated and adaptable professional with an MBA in Management, BBA in Management,
+          ICT diploma and experience as a Business Development Executive.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#experience" class="px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 font-bold transition">
+            <i class="fa-solid fa-briefcase mr-2"></i>View Experience
+          </a>
+          <button onclick="window.print()" class="no-print px-5 py-3 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 font-bold">
+            <i class="fa-solid fa-file-pdf mr-2"></i>Print / Save PDF
+          </button>
+          <a href="tel:+8801840510234" class="px-5 py-3 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 font-bold">
+            <i class="fa-solid fa-phone mr-2"></i>Call
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:justify-end">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-sky-400/20 blur-2xl rounded-full"></div>
+          <img src="assets/profile.jpg" alt="Shimul Kumar Sarkar" class="relative w-56 h-64 sm:w-64 sm:h-72 object-cover rounded-3xl border-4 border-white/20 shadow-2xl">
+          <div class="absolute -bottom-5 -left-5 glass rounded-2xl px-4 py-3">
+            <div class="text-xs text-slate-300">Based in</div>
+            <div class="font-bold">Rajshahi, Bangladesh</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="hero-card">
-    <div class="avatar">SKS</div>
-    <p>Open to professional opportunities</p>
-    <div class="mini-grid">
-      <div><strong>MBA</strong><small>Management</small></div>
-      <div><strong>BBA</strong><small>Management</small></div>
-      <div><strong>ICT</strong><small>Professional Training</small></div>
-      <div><strong>BD</strong><small>Business Development</small></div>
+  </section>
+
+  <!-- QUICK CONTACT -->
+  <section class="max-w-6xl mx-auto px-4 -mt-8 relative z-10">
+    <div class="grid sm:grid-cols-3 gap-4">
+      <a href="tel:+8801840510234" class="p-5 rounded-2xl bg-white dark:bg-slate-900 shadow-soft border border-slate-100 dark:border-slate-800 hover:-translate-y-1 transition">
+        <i class="fa-solid fa-phone text-sky-600 text-xl"></i>
+        <div class="font-bold mt-2">Phone</div><div class="text-sm text-slate-500">+8801840510234</div>
+      </a>
+      <a href="mailto:shimulsarkar4@gmail.com" class="p-5 rounded-2xl bg-white dark:bg-slate-900 shadow-soft border border-slate-100 dark:border-slate-800 hover:-translate-y-1 transition">
+        <i class="fa-solid fa-envelope text-sky-600 text-xl"></i>
+        <div class="font-bold mt-2">Email</div><div class="text-sm text-slate-500">shimulsarkar4@gmail.com</div>
+      </a>
+      <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 shadow-soft border border-slate-100 dark:border-slate-800">
+        <i class="fa-solid fa-location-dot text-sky-600 text-xl"></i>
+        <div class="font-bold mt-2">Location</div><div class="text-sm text-slate-500">Ft. 57, Fudkipara, Boalia, Rajshahi-6100</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about" class="section">
-  <div class="section-head"><p class="eyebrow">ABOUT ME</p><h2>Professional profile</h2></div>
-  <div class="about-grid">
-    <p>I am a self-motivated and adaptable professional with an academic background in Management and practical experience in business development. I enjoy working with clients, understanding business needs, solving problems and learning new skills.</p>
-    <p>My ICT training has strengthened my computer and technology skills, while my professional experience has developed my communication, client-handling and business problem-solving abilities.</p>
-  </div>
-</section>
-
-<section id="experience" class="section alt">
-  <div class="section-head"><p class="eyebrow">EXPERIENCE</p><h2>Professional journey</h2></div>
-  <article class="timeline-card">
-    <div class="date">PROFESSIONAL EXPERIENCE</div>
-    <div>
-      <h3>Business Development Executive</h3>
-      <h4>Doer Services PLC</h4>
-      <ul>
-        <li>Built and maintained professional relationships with clients and stakeholders.</li>
-        <li>Supported business development activities and contributed to client acquisition.</li>
-        <li>Handled client communication, requirements and day-to-day problem solving.</li>
-        <li>Worked independently and collaboratively to achieve business objectives.</li>
-      </ul>
+  <!-- ABOUT / OBJECTIVE -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-20">
+    <div class="section-title mb-10">
+      <p class="text-sky-600 font-bold">PROFILE</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mt-1">আমার সম্পর্কে</h2>
     </div>
-  </article>
-</section>
+    <div class="grid lg:grid-cols-[1.3fr_.7fr] gap-8">
+      <div class="bg-white dark:bg-slate-900 p-7 rounded-3xl shadow-soft border border-slate-100 dark:border-slate-800">
+        <h3 class="text-xl font-bold mb-4">Career Objective</h3>
+        <p class="leading-8 text-slate-600 dark:text-slate-300">
+          Looking for hard and challenging job where I will have the scope to utilize my
+          potentiality, creativity, adaptability and skill to do something innovative and
+          from where I will be able to enhance my knowledge.
+        </p>
+      </div>
+      <div class="bg-slate-900 text-white p-7 rounded-3xl shadow-soft">
+        <h3 class="text-xl font-bold mb-5">Why Me</h3>
+        <ul class="space-y-3 text-slate-200">
+          <li><i class="fa-solid fa-check text-sky-400 mr-2"></i>Can carry out duties with minimum instruction.</li>
+          <li><i class="fa-solid fa-check text-sky-400 mr-2"></i>Motivation, counseling and self-driven attitude.</li>
+          <li><i class="fa-solid fa-check text-sky-400 mr-2"></i>Able to work under challenging environments.</li>
+          <li><i class="fa-solid fa-check text-sky-400 mr-2"></i>Sincere and eager to learn.</li>
+          <li><i class="fa-solid fa-check text-sky-400 mr-2"></i>Teamwork and ability to motivate people.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<section id="education" class="section">
-  <div class="section-head"><p class="eyebrow">EDUCATION</p><h2>Academic background</h2></div>
-  <div class="cards">
-    <article class="card"><span class="num">01</span><h3>Master of Business Administration (MBA)</h3><p>Management<br>National University / Rajshahi College</p></article>
-    <article class="card"><span class="num">02</span><h3>Bachelor of Business Administration (BBA)</h3><p>Management<br>National University / Rajshahi College</p></article>
-    <article class="card"><span class="num">03</span><h3>Diploma in ICT</h3><p>Bangladesh Computer Council<br>Professional ICT & computer skills</p></article>
-  </div>
-</section>
+  <!-- EXPERIENCE -->
+  <section id="experience" class="bg-slate-100 dark:bg-slate-900/50 py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-title mb-10">
+        <p class="text-sky-600 font-bold">CAREER</p><h2 class="text-3xl sm:text-4xl font-extrabold mt-1">অভিজ্ঞতা</h2>
+      </div>
+      <div class="max-w-4xl">
+        <div class="relative pl-8 border-l-2 border-sky-500">
+          <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-sky-500 border-4 border-slate-100 dark:border-slate-900"></div>
+          <div class="bg-white dark:bg-slate-900 p-7 rounded-3xl shadow-soft border border-slate-100 dark:border-slate-800">
+            <div class="flex flex-wrap justify-between gap-3">
+              <div>
+                <span class="text-sky-600 font-bold">Sep 2023 – Feb 2024</span>
+                <h3 class="text-2xl font-extrabold mt-2">Business Development Executive</h3>
+                <p class="font-semibold text-slate-600 dark:text-slate-300">Doer Services PLC (Agrani Doer Banking)</p>
+              </div>
+              <span class="h-fit px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 text-sm font-bold">Professional Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="skills" class="section dark">
-  <div class="section-head"><p class="eyebrow">CORE SKILLS</p><h2>What I bring</h2></div>
-  <div class="skills">
-    <span>Business Development</span><span>Client Relationship Management</span><span>Communication</span>
-    <span>Problem Solving</span><span>Digital Marketing</span><span>Computer & ICT</span>
-    <span>Teamwork</span><span>Adaptability</span><span>Independent Work</span><span>Continuous Learning</span>
-  </div>
-</section>
+  <!-- EDUCATION -->
+  <section id="education" class="max-w-6xl mx-auto px-4 py-20">
+    <div class="section-title mb-10">
+      <p class="text-sky-600 font-bold">ACADEMIC BACKGROUND</p><h2 class="text-3xl sm:text-4xl font-extrabold mt-1">শিক্ষা ও কোর্স</h2>
+    </div>
 
-<section class="section">
-  <div class="section-head"><p class="eyebrow">CAREER OBJECTIVE</p><h2>Ready for the next challenge</h2></div>
-  <div class="quote-box">
-    <p>“I am looking for an opportunity where I can apply my management, business development and digital skills, contribute measurable value to an organization, and continue growing professionally.”</p>
-  </div>
-</section>
+    <div class="grid lg:grid-cols-2 gap-6">
+      <article class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-soft">
+        <div class="flex gap-4">
+          <div class="w-12 h-12 shrink-0 rounded-2xl bg-sky-100 dark:bg-sky-950 text-sky-600 flex items-center justify-center"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <span class="text-sky-600 font-bold text-sm">2017–2018</span>
+            <h3 class="text-xl font-extrabold mt-1">Master of Business Administration (MBA)</h3>
+            <p class="font-semibold mt-1">National University, Rajshahi College</p>
+            <p class="text-slate-500 mt-1">Management • CGPA 2.97 / 4</p>
+          </div>
+        </div>
+      </article>
 
-<section id="contact" class="section contact">
-  <div>
-    <p class="eyebrow">CONTACT</p>
-    <h2>Let's build something valuable.</h2>
-    <p>For job opportunities, professional collaboration or business discussions, please get in touch.</p>
-  </div>
-  <div class="contact-box">
-    <a href="mailto:YOUR_EMAIL@example.com"><strong>Email</strong><span>YOUR_EMAIL@example.com</span></a>
-    <a href="tel:+8801XXXXXXXXX"><strong>Phone</strong><span>+880 1XXXXXXXXX</span></a>
-    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener"><strong>LinkedIn</strong><span>linkedin.com/in/YOUR-LINKEDIN</span></a>
-    <p><strong>Location</strong><span>Rajshahi, Bangladesh</span></p>
-  </div>
-</section>
+      <article class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-soft">
+        <div class="flex gap-4">
+          <div class="w-12 h-12 shrink-0 rounded-2xl bg-sky-100 dark:bg-sky-950 text-sky-600 flex items-center justify-center"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <span class="text-sky-600 font-bold text-sm">2013–2014</span>
+            <h3 class="text-xl font-extrabold mt-1">Bachelor of Business Administration (BBA)</h3>
+            <p class="font-semibold mt-1">National University, Rajshahi College</p>
+            <p class="text-slate-500 mt-1">Management • CGPA 3.04 / 4</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-soft">
+        <span class="text-sky-600 font-bold text-sm">2010–2011</span>
+        <h3 class="text-xl font-extrabold mt-1">Intermediate (HSC)</h3>
+        <p class="font-semibold">Singra Damdama Pilot School & College, Natore</p>
+        <p class="text-slate-500">Business Studies • GPA 4.00 / 5</p>
+      </article>
+
+      <article class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-soft">
+        <span class="text-sky-600 font-bold text-sm">2008–2009</span>
+        <h3 class="text-xl font-extrabold mt-1">High School (SSC)</h3>
+        <p class="font-semibold">Purushuttam Bati Dwimukhi High School, Natore</p>
+        <p class="text-slate-500">Science • GPA 4.38 / 5</p>
+      </article>
+
+      <article class="lg:col-span-2 p-6 rounded-3xl bg-gradient-to-br from-sky-600 to-blue-700 text-white shadow-soft">
+        <span class="text-sky-100 font-bold text-sm">17 April 2017 – 27 October 2017</span>
+        <h3 class="text-2xl font-extrabold mt-1">Diploma in Information & Communication Technology (DICT)</h3>
+        <p class="font-semibold">Bangladesh Computer Council (BCC), Regional Office, Rajshahi</p>
+        <p class="text-sky-100 mt-1">CGPA 3.13 / 4</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="bg-slate-100 dark:bg-slate-900/50 py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-title mb-10">
+        <p class="text-sky-600 font-bold">CAPABILITIES</p><h2 class="text-3xl sm:text-4xl font-extrabold mt-1">দক্ষতা</h2>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-slate-900 p-7 rounded-3xl shadow-soft border border-slate-100 dark:border-slate-800">
+          <h3 class="text-xl font-extrabold mb-6"><i class="fa-solid fa-computer text-sky-600 mr-2"></i>Computer Skills</h3>
+          <div class="space-y-5">
+            <div><div class="flex justify-between text-sm font-semibold"><span>Computer fundamentals & office automation</span><span>Advanced</span></div><div class="skill-bar mt-2"><div class="skill-fill" style="width:90%"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold"><span>Hardware maintenance & troubleshooting</span><span>Good</span></div><div class="skill-bar mt-2"><div class="skill-fill" style="width:78%"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold"><span>Computer programming with C</span><span>Good</span></div><div class="skill-bar mt-2"><div class="skill-fill" style="width:70%"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold"><span>Database management systems</span><span>Good</span></div><div class="skill-bar mt-2"><div class="skill-fill" style="width:72%"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold"><span>Multimedia and CAD</span><span>Good</span></div><div class="skill-bar mt-2"><div class="skill-fill" style="width:68%"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold"><span>Internet & web technology</span><span>Good</span></div><div class="skill-bar mt-2"><div class="skill-fill" style="width:76%"></div></div></div>
+            <div><div class="flex justify-between text-sm font-semibold"><span>Data communication, OpenOffice & networking</span><span>Good</span></div><div class="skill-bar mt-2"><div class="skill-fill" style="width:72%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="bg-white dark:bg-slate-900 p-7 rounded-3xl shadow-soft border border-slate-100 dark:border-slate-800">
+            <h3 class="text-xl font-extrabold mb-5"><i class="fa-solid fa-language text-sky-600 mr-2"></i>Languages</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="px-4 py-2 rounded-full bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 font-bold">বাংলা — Native</span>
+              <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 font-bold">English — High proficiency</span>
+            </div>
+          </div>
+          <div class="bg-white dark:bg-slate-900 p-7 rounded-3xl shadow-soft border border-slate-100 dark:border-slate-800">
+            <h3 class="text-xl font-extrabold mb-5"><i class="fa-solid fa-heart text-rose-500 mr-2"></i>Hobbies</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="tag">Traveling</span><span class="tag">Football</span><span class="tag">Cricket</span><span class="tag">Reading Books</span><span class="tag">Listening Music</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section id="personal" class="max-w-6xl mx-auto px-4 py-20">
+    <div class="section-title mb-10">
+      <p class="text-sky-600 font-bold">PROFILE DETAILS</p><h2 class="text-3xl sm:text-4xl font-extrabold mt-1">ব্যক্তিগত তথ্য</h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="bg-white dark:bg-slate-900 rounded-3xl p-7 shadow-soft border border-slate-100 dark:border-slate-800">
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+          <div><p class="text-xs text-slate-500">Father's Name</p><p class="font-bold">Sukumar Sarkar</p></div>
+          <div><p class="text-xs text-slate-500">Mother's Name</p><p class="font-bold">Rina Rani</p></div>
+          <div><p class="text-xs text-slate-500">Date of Birth</p><p class="font-bold">13/08/1994</p></div>
+          <div><p class="text-xs text-slate-500">Gender</p><p class="font-bold">Male</p></div>
+          <div><p class="text-xs text-slate-500">Marital Status</p><p class="font-bold">Unmarried</p></div>
+          <div><p class="text-xs text-slate-500">Nationality</p><p class="font-bold">Bangladeshi</p></div>
+          <div><p class="text-xs text-slate-500">Religion</p><p class="font-bold">Sanatan (Hindu)</p></div>
+          <div><p class="text-xs text-slate-500">Blood Group</p><p class="font-bold">AB (+ve)</p></div>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <div class="bg-sky-50 dark:bg-sky-950/40 rounded-3xl p-7 border border-sky-100 dark:border-sky-900">
+          <h3 class="font-extrabold text-xl mb-4"><i class="fa-solid fa-house mr-2 text-sky-600"></i>Present Address</h3>
+          <p>Ft. 57, Fudkipara, Boalia, Rajshahi-6100, Bangladesh</p>
+        </div>
+        <div class="bg-slate-100 dark:bg-slate-900 rounded-3xl p-7 border border-slate-200 dark:border-slate-800">
+          <h3 class="font-extrabold text-xl mb-4"><i class="fa-solid fa-map-location-dot mr-2 text-sky-600"></i>Permanent Address</h3>
+          <p>Basantarupur, Dwipakuria-6450, Singra, Natore, Bangladesh</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6 p-5 rounded-2xl border border-amber-200 bg-amber-50 dark:bg-amber-950/30 dark:border-amber-900 text-sm text-amber-800 dark:text-amber-200">
+      <i class="fa-solid fa-shield-halved mr-2"></i>
+      <strong>Privacy:</strong> The NID number from the source CV is intentionally not published on this public website. It is safer to keep government ID numbers off a public portfolio.
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references" class="bg-slate-100 dark:bg-slate-900/50 py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="section-title mb-10">
+        <p class="text-sky-600 font-bold">PROFESSIONAL CONTACTS</p><h2 class="text-3xl sm:text-4xl font-extrabold mt-1">রেফারেন্স</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-slate-900 p-7 rounded-3xl shadow-soft border border-slate-100 dark:border-slate-800">
+          <h3 class="text-xl font-extrabold">Md. Jahangir Alam</h3>
+          <p class="text-sky-600 font-semibold">Principal Officer</p>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Audit and Inspection Division-1<br>Agrani Bank PLC</p>
+          <div class="mt-4 space-y-2 text-sm">
+            <a href="tel:01720051481" class="block hover:text-sky-600"><i class="fa-solid fa-phone mr-2"></i>01720-051481</a>
+            <a href="mailto:jalam.icc@gmail.com" class="block hover:text-sky-600"><i class="fa-solid fa-envelope mr-2"></i>jalam.icc@gmail.com</a>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-slate-900 p-7 rounded-3xl shadow-soft border border-slate-100 dark:border-slate-800">
+          <h3 class="text-xl font-extrabold">Ripan Kumar Sarker</h3>
+          <p class="text-sky-600 font-semibold">Principal Officer</p>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">Audit and Inspection Division-1<br>Agrani Bank PLC</p>
+          <div class="mt-4 space-y-2 text-sm">
+            <a href="tel:01770678126" class="block hover:text-sky-600"><i class="fa-solid fa-phone mr-2"></i>01770-678126</a>
+            <a href="mailto:sarker_r4@yahoo.com" class="block hover:text-sky-600"><i class="fa-solid fa-envelope mr-2"></i>sarker_r4@yahoo.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECLARATION -->
+  <section class="max-w-6xl mx-auto px-4 py-20">
+    <div class="bg-slate-900 text-white rounded-3xl p-8 md:p-10">
+      <h2 class="text-2xl font-extrabold mb-4">Declaration</h2>
+      <p class="text-slate-300 leading-8">
+        “I do hereby declare that all information stated above is true and complete to the best of my knowledge and belief”.
+      </p>
+      <div class="mt-8 flex justify-end">
+        <div class="text-center">
+          <img src="assets/signature.png" alt="Shimul Kumar Sarkar signature" class="w-36 h-20 object-contain mx-auto">
+          <p class="font-bold">Shimul Kumar Sarkar</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer><span>© <span id="year"></span> Shimul Kumar Sarkar</span><span>Professional Portfolio</span></footer>
-<script src="script.js"></script>
+<footer class="bg-slate-950 text-slate-400 py-8 px-4">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-4 items-center">
+    <p>© <span id="year"></span> Shimul Kumar Sarkar. All rights reserved.</p>
+    <div class="flex gap-4">
+      <a href="tel:+8801840510234" class="hover:text-white"><i class="fa-solid fa-phone"></i></a>
+      <a href="mailto:shimulsarkar4@gmail.com" class="hover:text-white"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const html = document.documentElement;
+  const themeBtn = document.getElementById('themeBtn');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const langBtn = document.getElementById('langBtn');
+
+  if (localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  }
+
+  themeBtn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+  });
+
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // Lightweight language switch for key navigation labels.
+  let english = false;
+  langBtn.addEventListener('click', () => {
+    english = !english;
+    langBtn.textContent = english ? 'BN' : 'EN';
+    document.querySelectorAll('#mobileMenu a').forEach((a,i) => {
+      const bn = ['আমার সম্পর্কে','অভিজ্ঞতা','শিক্ষা ও কোর্স','দক্ষতা','ব্যক্তিগত তথ্য','রেফারেন্স'];
+      const en = ['About','Experience','Education','Skills','Personal','References'];
+      a.textContent = english ? en[i] : bn[i];
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
